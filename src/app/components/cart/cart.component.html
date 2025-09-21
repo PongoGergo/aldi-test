@@ -1,0 +1,77 @@
+<div class="container">
+  <p-dataView #dv [value]="cart" [rows]="5" layout="list" [paginator]="true">
+    <ng-template #list let-items>
+      <div class="row">
+        <div
+          class="col-12 cart-container"
+          *ngFor="let item of items; let first = first"
+        >
+          <div class="cart-row">
+            <div class="img-container">
+              <img
+                class="cart-img"
+                [src]="item.img"
+                [alt]="item.name"
+                (error)="onImageError($event)"
+              />
+            </div>
+            <div class="cart-item">
+              <div class="cart-item-data">
+                <div class="product-info">
+                  <span class="font-medium text-secondary text-sm">{{
+                    item.name
+                  }}</span>
+                  <div
+                    class="text-lg font-medium text-surface-900 dark:text-surface-0 mt-2"
+                  >
+                    {{ item.price * item.minOrderAmount }} Ft
+                    {{
+                      item.minOrderAmount > 1
+                        ? "/" + item.minOrderAmount + "Darab"
+                        : "/Darab"
+                    }}
+                  </div>
+                </div>
+                <div class="cart-item-amount">
+                  <p-inputNumber
+                    [(ngModel)]="item.amount"
+                    [min]="1"
+                    [max]="item.availableAmount / item.minOrderAmount"
+                    [step]="1"
+                    [showButtons]="true"
+                    (onBlur)="updateCartItem(item)"
+                  ></p-inputNumber>
+                </div>
+              </div>
+              <div class="flex flex-col md:items-end gap-8">
+                <button
+                  pButton
+                  type="button"
+                  icon="pi pi-trash"
+                  class="p-button-rounded p-button-danger"
+                  (click)="removeFromCart(item.id)"
+                ></button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </ng-template>
+  </p-dataView>
+
+  <div
+    class="p-mt-3 w-100 d-flex flex-column justify-content-between align-items-end"
+  >
+    <button
+      pButton
+      type="button"
+      label="Kosár ürítése"
+      class="p-button-danger mb-3"
+      (click)="clearCart()"
+    ></button>
+
+    <div class="p-mt-2">
+      <strong>Összesen: {{ totalPrice }}</strong>
+    </div>
+  </div>
+</div>

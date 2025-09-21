@@ -24,7 +24,7 @@ The app uses Angular **standalone components** and the new router configuration 
 1. Clone the repository:
 
    ```sh
-   git clone <your-repo-url>
+   git clone aldi-test
    cd aldi-test
    ```
 
@@ -53,7 +53,7 @@ npm test
 
 ## Project Structure
 
-- `src/app/components/` — UI components (product list, product item, cart, cart item)
+- `src/app/components/` — UI components (product list, product item, cart)
 - `src/app/services/` — Angular services (product fetching, cart logic)
 - `src/app/interfaces/` — TypeScript interfaces (e.g., `Product`)
 - `src/app/app.ts` — Root standalone component

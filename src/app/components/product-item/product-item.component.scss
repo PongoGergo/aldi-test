@@ -1,0 +1,17 @@
+
+p-card{
+  min-width: 200px;
+  overflow: hidden;
+  img{
+    width: 100%;
+    height: 200px;
+    display: block;
+    object-fit: cover;
+  }
+  .footer{
+    width: 100%;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+  }
+}

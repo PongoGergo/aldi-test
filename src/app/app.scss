@@ -1,0 +1,40 @@
+header{
+  background-color: #344384;
+  padding: 20px 50px 20px 50px;
+}
+.search{
+  min-height: 40px;
+  height: 100%;
+  input{
+    height: 100%;
+    border-radius: 5px;
+  }
+}
+@media (max-width: 768px) {
+  .search-container{
+    margin-bottom: 1.5rem;
+  }
+}
+.cart{
+  float: right;
+  min-width: 200px;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: space-between;
+  overflow: visible;
+}
+.cart-icon{
+  height: 100%;
+  float: left;
+}
+.cart-amount{
+  height: 100%;
+  position: static;
+}
+.cart-right{
+  height: 100%;
+  float: right;
+}
+
+a{text-decoration: none;}

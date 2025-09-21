@@ -1,59 +1,82 @@
-# AldiTest
+# Aldi E-Commerce Demo
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.0.3.
+This is an Angular-based e-commerce demo application for Aldi, featuring product listing, shopping cart functionality, and a modern UI using PrimeNG and Bootstrap.  
+The app uses Angular **standalone components** and the new router configuration via `provideRouter`.
 
-## Development server
+## Features
 
-To start a local development server, run:
+- Product listing with images, prices, and package info
+- Shopping cart with total calculation and badge indicator
+- Search bar for filtering products
+- Responsive design using Bootstrap and SCSS
+- PrimeNG components for cards, buttons, icons, and badges
+- Angular standalone components and standalone routing
 
-```bash
-ng serve
+## Getting Started
+
+### Prerequisites
+
+- Node.js (v18+ recommended)
+- npm
+
+### Installation
+
+1. Clone the repository:
+
+   ```sh
+   git clone <your-repo-url>
+   cd aldi-test
+   ```
+
+2. Install dependencies:
+   ```sh
+   npm install
+   ```
+
+### Running the Application
+
+Start the development server:
+
+```sh
+npm start
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+The app will be available at [http://localhost:4200](http://localhost:4200).
 
-## Code scaffolding
+### Running Tests
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+To execute unit tests:
 
-```bash
-ng generate component component-name
+```sh
+npm test
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+## Project Structure
 
-```bash
-ng generate --help
-```
+- `src/app/components/` — UI components (product list, product item, cart, cart item)
+- `src/app/services/` — Angular services (product fetching, cart logic)
+- `src/app/interfaces/` — TypeScript interfaces (e.g., `Product`)
+- `src/app/app.ts` — Root standalone component
+- `src/app/app.routes.ts` — Route configuration for standalone routing
 
-## Building
+## Technologies Used
 
-To build the project run:
+- Angular 17+ (standalone components & routing)
+- PrimeNG & PrimeIcons
+- Bootstrap 5
+- RxJS
+- SCSS
 
-```bash
-ng build
-```
+## Routing
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+Routes are configured in [`src/app/app.routes.ts`](src/app/app.routes.ts) and provided via `provideRouter` in `main.ts`.  
+Navigation uses `[routerLink]` on `<a>` tags for client-side routing.
 
-## Running unit tests
+## Customization
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+- Theme can be customized in `src/app/app.scss`.
+- Product API endpoint is set in `src/app/services/product.service.ts`.
 
-```bash
-ng test
-```
+## License
 
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+This project is for demonstration purposes.
